@@ -40,19 +40,19 @@ int Dequeue(struct CircularQueue* q){
 
 int main(){
             struct CircularQueue * Q = (struct CircularQueue*)malloc(sizeof(struct CircularQueue));
-            Q->size = 10;
+            Q->size = 4;
             Q->FrontEnd = Q->RearEnd = 0;  //one space researved for FrontEnd
             Q->arr = (int*)malloc(Q->size * sizeof(int));
 
             Enqueue(Q,12);
             Enqueue(Q,24);
             Enqueue(Q,36);
-            Enqueue(Q,48);
+            // Enqueue(Q,48);
 
             printf("Dequeuing element %d\n",Dequeue(Q));
             printf("Dequeuing element %d\n",Dequeue(Q));
             printf("Dequeuing element %d\n",Dequeue(Q));
-            printf("Dequeuing element %d\n",Dequeue(Q));
+            
 
             if(isEmpty(Q)){
                 printf("Circular Queue is Empty\n");
