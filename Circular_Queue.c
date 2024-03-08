@@ -41,7 +41,7 @@ int Dequeue(struct CircularQueue* q){
 int main(){
             struct CircularQueue * Q = (struct CircularQueue*)malloc(sizeof(struct CircularQueue));
             Q->size = 10;
-            Q->FrontEnd = Q->RearEnd = 0; 
+            Q->FrontEnd = Q->RearEnd = 0;  //one space researved for FrontEnd
             Q->arr = (int*)malloc(Q->size * sizeof(int));
 
             Enqueue(Q,12);
