@@ -23,7 +23,7 @@ int isFull(struct Queue * q){
 
 void Enqueue(struct Queue* q, int val){
     if(isFull(q)){
-        printf("Queue overflow!\n");
+        printf("Queue overflow!\n");    
     }
     q->RearEnd++;
     q->arr[q->RearEnd] = val;
