@@ -46,6 +46,7 @@ void main(){
             int B[] = {1,2,3,4,5,6};
             int n = 6;
 
+            /*Non-Adaptive Bubble sort Algorithm*/
             printf("Array Before Sorting.\n");
             printArray(A,n);
 
@@ -54,7 +55,7 @@ void main(){
             printf("Array After Sorting.\n");
             printArray(A,n);
 
-
+            /* Adaptive Bubble sort Algorithm*/
             printf("\nSorted Array: ");
             printArray(B,n);
 
