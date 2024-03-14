@@ -10,6 +10,7 @@ void printArray(int * arr, int n){
 
 void SelectionSort(int * arr, int n){
     int minofindex,temp;
+    printf("Running Selection Sort....\n");
     for(int i = 0; i < n-1; i++){
         minofindex = i;
         for(int j = i+1; j < n; j++){
