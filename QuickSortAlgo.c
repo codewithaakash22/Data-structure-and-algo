@@ -13,15 +13,15 @@ int partition(int *a, int low, int high){
     int i = low+1;
     int j = high;
     int temp;
-
+    do{ 
     while (a[i]<=pivot)
     {
         i++;
     }
 
-    while (a[j]>=pivot)
+    while (a[j]>pivot)
     {
-        j++;
+        j--;
     }
 
     if(i<j){
@@ -29,6 +29,12 @@ int partition(int *a, int low, int high){
         a[i] = a[j];
         a[j] = temp;
     }
+    }while(i<j);
+
+    temp = a[low];
+    a[low] = a[j];
+    a[j] = temp;
+
     return j;
 }
 
