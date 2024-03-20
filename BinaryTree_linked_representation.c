@@ -61,14 +61,21 @@ void main(){
 
             */
 
-            struct Node* p = CreateNode(12);
-            struct Node* p1 = CreateNode(24);
-            struct Node* p2 = CreateNode(36);
+            struct Node* p = CreateNode(5);
+            struct Node* p1 = CreateNode(3);
+            struct Node* p2 = CreateNode(6);
+            struct Node* p3 = CreateNode(5);
+            struct Node* p4 = CreateNode(2);
+            
 
 
             //Linking the root node with left and right children 
             p->left = p1;
             p->right = p2;
+
+            //Linking the second node with left and right children 
+            p1->left = p3;
+            p1->right = p4;
 
             printf("preOrder Traversal: ");
             PreOrder(p);
