@@ -22,6 +22,22 @@ void PreOrder(struct Node* root){
     }
 }
 
+void postOrder(struct Node* root){
+    if(root != NULL){            
+       postOrder(root->left);
+       postOrder(root->right);
+       printf("%d ",root->data); 
+    }
+}
+
+void inOrder(struct Node* root){
+    if(root != NULL){            
+       inOrder(root->left);
+       printf("%d ",root->data); 
+       inOrder(root->right);
+    }
+}
+
 void main(){
 
             /*
@@ -54,6 +70,11 @@ void main(){
             p->left = p1;
             p->right = p2;
 
+            printf("preOrder Traversal: ");
             PreOrder(p);
+            printf("\npostOrder Traversal: ");
+            postOrder(p);
+            printf("\ninOrder Traversal: ");
+            inOrder(p);
             
 }
