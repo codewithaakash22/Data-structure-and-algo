@@ -7,9 +7,9 @@ struct Node{
 };
 
 struct Node* createNode(int val){
-    struct Node* n = (struct Node*)malloc(sizeof(struct Node));
-    n->data = val;
-    n->left = NULL;
+    struct Node* n = (struct Node*)malloc(sizeof(struct Node)); 
+    n->data = val; 
+    n->left = NULL; 
     n->right = NULL;
 
     return n;
@@ -20,6 +20,23 @@ void inOrder(struct Node* root){
         inOrder(root->left);
         printf("%d ",root->data);
         inOrder(root->right);
+    }
+}
+
+int isBST(struct Node* root){
+    static struct Node* prev = NULL;
+    if(root!= NULL){
+        if(!isBST(root->left)){
+            return 0;
+        }
+        if(prev != NULL && root->data <= prev->data){
+            return 0;
+        }
+        prev = root;
+        return isBST(root->right);
+    }
+    else{
+        return 1;
     }
 }
 
@@ -44,4 +61,5 @@ void main(){
 
 
                 inOrder(p);
+                printf("\n %d ",isBST(p));
 }
