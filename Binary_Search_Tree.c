@@ -40,6 +40,21 @@ int isBST(struct Node* root){
     }
 }
 
+struct Node* search(struct Node* root, int key){
+    if(root == NULL){
+        return NULL;
+    }
+    if(root->data == key){
+        return root;
+    }
+    else if(key<root->data){
+        return search(root->left,key);
+    }
+    else{
+        return search(root->right,key);
+    }
+}
+
 void main(){
                 struct Node* p = createNode(5);
                 struct Node* p1 = createNode(2);
@@ -61,5 +76,21 @@ void main(){
 
 
                 inOrder(p);
-                printf("\n %d ",isBST(p));
+
+                if(isBST(p)){ 
+                printf("\nBinary search tree found\n");
+                }
+                else{ 
+                    printf("\nBinary search tree found\n");
+                }
+
+                
+                struct Node* n = search(p,1);
+                
+                if(n != NULL){
+                    printf("Element %d found\n",n->data);
+                }
+                else{
+                    printf("\nElement not found\n");
+                }
 }
